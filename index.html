@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>弯弯小手机</title>
+<link rel="stylesheet" href="css/wechat.css">
+</head>
+<body>
+<div class="phone-frame">
+  <div class="status-bar">
+    <span class="time">9:41</span>
+    <span class="notch"></span>
+    <span class="icons">📶 🔋</span>
+  </div>
+
+  <!-- 微信联系人列表页 -->
+  <div id="chatListPage" class="page active">
+    <div class="chat-header">
+      <h1>微信</h1>
+      <button id="settingsBtn" class="icon-btn">⚙️</button>
+    </div>
+    <div class="contact-list" id="contactList"></div>
+  </div>
+
+  <!-- 聊天窗口页 -->
+  <div id="chatPage" class="page">
+    <div class="chat-nav">
+      <button class="back-btn" id="backToList">←</button>
+      <h2 id="chatName">好友</h2>
+      <button class="meet-btn" id="meetBtn">线下见面</button>
+    </div>
+    <div class="message-list" id="messageList"></div>
+    <div class="input-bar">
+      <input type="text" id="msgInput" placeholder="发消息...">
+      <button id="sendBtn">发送</button>
+    </div>
+  </div>
+
+  <!-- 线下见面页 -->
+  <div id="meetPage" class="page">
+    <div class="chat-nav">
+      <button class="back-btn" id="backFromMeet">←</button>
+      <h2 id="meetName">线下见面</h2>
+    </div>
+    <div class="meet-scene" id="meetScene">
+      <div class="meet-avatar" id="meetAvatar"></div>
+      <div class="meet-dialog" id="meetDialog"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 设置弹窗 -->
+<div id="settingsModal" class="modal">
+  <div class="modal-content">
+    <h3>API 设置</h3>
+    <label>API 地址 <input type="text" id="apiBase" placeholder="https://api.deepseek.com/v1"></label>
+    <label>API Key <input type="password" id="apiKey" placeholder="sk-..."></label>
+    <label>模型名 <input type="text" id="modelName" placeholder="deepseek-chat"></label>
+    <label>回复间隔(秒) <input type="number" id="replyDelay" value="20"></label>
+    <button id="saveSettings">保存</button>
+    <button id="closeSettings" class="secondary">关闭</button>
+  </div>
+</div>
+
+<script src="js/db.js"></script>
+<script src="js/data.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/meet.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
